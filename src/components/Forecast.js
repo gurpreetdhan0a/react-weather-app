@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-const KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 class Forecast extends Component {
     state = {
@@ -53,7 +52,7 @@ class Forecast extends Component {
 
     getForecast = async () => {
             this.setState({loading:true});
-            const response = await axios.get(`https://api.worldweatheronline.com/premium/v1/weather.ashx?key=${KEY}&q=${this.state.cityName}&num_of_days=4&tp=3&format=json`);
+            const response = await axios.get(`https://api.worldweatheronline.com/premium/v1/weather.ashx?key=148082e34b234d5aaeb52015202312&q=${this.state.cityName}&num_of_days=4&tp=3&format=json`);
             this.setState({result: [response.data.data], loading:false});
     }
     
